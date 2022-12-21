@@ -1,10 +1,17 @@
-
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        ExpressaoRegular expressaoRegular = new ExpressaoRegular();
         System.out.println("LFA_regex");
-        expressaoRegular.confere(expressaoRegular.linguagem1, "aababaaa");
-        expressaoRegular.confere(expressaoRegular.linguagem2, "babbaa");
-        expressaoRegular.confere(expressaoRegular.linguagem3, "IMG_20220702.jpg");
+        do{
+            System.out.print("\nExpressão regular:\t");
+            expressaoRegular.setArbitraria(scanner.next());
+            System.out.print("\nPalavra:\t");
+            expressaoRegular.confere(expressaoRegular.getArbitraria(), scanner.next());
+            System.out.println("Tentar de novo? (y/n)");
+            opcao=scanner.next();
+        }while (opcao.equals("y") || opcao.equals("Y"));
     }
+    public static Scanner scanner = new Scanner(System.in);
+    public static String opcao;
+    public static ExpressaoRegular expressaoRegular = new ExpressaoRegular();
 }
